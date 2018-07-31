@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"os"
 	"os/exec"
@@ -27,54 +28,57 @@ var testCmd = &cobra.Command{
 	Use:                "test",
 	Short:              "Runs the tests for your Buffalo app",
 	DisableFlagParsing: true,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		os.Setenv("GO_ENV", "test")
+	RunE:               runTests,
+}
 
-		if _, err := os.Stat("database.yml"); err != nil {
-			return testRunner(args)
-		}
+func runTests(cmd *cobra.Command, args []string) error {
+	os.Setenv("GO_ENV", "test")
+	fmt.Println("Running plugin version of test command")
 
-		// there's a database
-		test, err := pop.Connect("test")
+	if _, err := os.Stat("database.yml"); err != nil {
+		return testRunner(args)
+	}
+
+	// there's a database
+	test, err := pop.Connect("test")
+	if err != nil {
+		return errors.WithStack(err)
+	}
+
+	// drop the test db:
+	test.Dialect.DropDB()
+
+	// create the test db:
+	err = test.Dialect.CreateDB()
+	if err != nil {
+		return errors.WithStack(err)
+	}
+
+	forceMigrations = strings.Contains(strings.Join(args, ""), "--force-migrations")
+
+	if forceMigrations {
+		args = removeFlag("--force-migrations", args)
+		fm, err := pop.NewFileMigrator("./migrations", test)
+
 		if err != nil {
-			return errors.WithStack(err)
+			return err
 		}
 
-		// drop the test db:
-		test.Dialect.DropDB()
-
-		// create the test db:
-		err = test.Dialect.CreateDB()
-		if err != nil {
-			return errors.WithStack(err)
-		}
-
-		forceMigrations = strings.Contains(strings.Join(args, ""), "--force-migrations")
-
-		if forceMigrations {
-			args = removeFlag("--force-migrations", args)
-			fm, err := pop.NewFileMigrator("./migrations", test)
-
-			if err != nil {
-				return err
-			}
-
-			if err := fm.Up(); err != nil {
-				return err
-			}
-
-			return testRunner(args)
-		}
-
-		if schema := findSchema(); schema != nil {
-			err = test.Dialect.LoadSchema(schema)
-			if err != nil {
-				return errors.WithStack(err)
-			}
+		if err := fm.Up(); err != nil {
+			return err
 		}
 
 		return testRunner(args)
-	},
+	}
+
+	if schema := findSchema(); schema != nil {
+		err = test.Dialect.LoadSchema(schema)
+		if err != nil {
+			return errors.WithStack(err)
+		}
+	}
+
+	return testRunner(args)
 }
 
 func removeFlag(flag string, args []string) []string {
