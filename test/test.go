@@ -3,6 +3,7 @@ package test
 import (
 	"bytes"
 	"os/exec"
+	"regexp"
 
 	"github.com/gobuffalo/envy"
 )
@@ -20,7 +21,7 @@ func removeFlag(flag string, args []string) []string {
 	return args
 }
 
-func testPackages() ([]string, error) {
+func findTestPackages() ([]string, error) {
 	args := []string{}
 	out, err := exec.Command(envy.Get("GO_BIN", "go"), "list", "./...").Output()
 
@@ -28,7 +29,9 @@ func testPackages() ([]string, error) {
 		return args, err
 	}
 
+	var vendorRegex = regexp.MustCompile("/vendor/")
 	pkgs := bytes.Split(bytes.TrimSpace(out), []byte("\n"))
+
 	for _, p := range pkgs {
 		if !vendorRegex.Match(p) {
 			args = append(args, string(p))

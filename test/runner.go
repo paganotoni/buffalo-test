@@ -4,7 +4,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"regexp"
 	"strings"
 
 	"github.com/gobuffalo/buffalo/meta"
@@ -12,9 +11,6 @@ import (
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 )
-
-var vendorPattern = "/vendor/"
-var vendorRegex = regexp.MustCompile(vendorPattern)
 
 type Runner struct {
 	args  []string
@@ -104,7 +100,7 @@ func (tr Runner) testPackages(givenArgs []string) ([]string, error) {
 		return givenArgs, nil
 	}
 
-	return testPackages()
+	return findTestPackages()
 }
 
 func (tr Runner) buildTestCmd(args []string) *exec.Cmd {
