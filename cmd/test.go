@@ -78,7 +78,6 @@ var testCmd = &cobra.Command{
 }
 
 func removeFlag(flag string, args []string) []string {
-	// Find and remove "two"
 	for i, v := range args {
 		if v != flag {
 			continue
