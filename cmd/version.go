@@ -12,7 +12,7 @@ var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "current version of test",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		fmt.Println("tester", test.Version)
+		fmt.Println("test", test.Version)
 		return nil
 	},
 }

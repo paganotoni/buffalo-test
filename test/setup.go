@@ -9,6 +9,7 @@ import (
 
 	"github.com/gobuffalo/pop"
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
 
 type Setup struct {
@@ -29,9 +30,11 @@ func NewSetup(args []string) (Setup, error) {
 }
 
 func (s Setup) Run() error {
+	logrus.Info("Setting up database")
 	s.resetDatabase()
 
 	if s.forceMigrations() {
+		logrus.Info("Running migrations")
 		fm, err := pop.NewFileMigrator("./migrations", s.conn)
 
 		if err != nil {
@@ -42,6 +45,7 @@ func (s Setup) Run() error {
 			return err
 		}
 	} else if schema := s.findSchemaFile(); schema != nil {
+		logrus.Info("Loading schema file")
 		err := s.conn.Dialect.LoadSchema(schema)
 		if err != nil {
 			return errors.WithStack(err)
