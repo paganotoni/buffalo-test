@@ -1,6 +1,6 @@
-# github.com/paganotoni/buffalo-tester
+# github.com/paganotoni/buffalo-test
 
-TODO: Description
+This is a plugin from the buffalo test command source.
 
 ## Installation
 
