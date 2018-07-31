@@ -1,11 +1,11 @@
-# github.com/paganotoni/buffalo-test
+# buffalo-test
 
 This is a plugin from the buffalo test command source.
 
 ## Installation
 
 ```bash
-$ go get -u -v github.com/paganotoni/buffalo-test
+$ go get -u -v github.com/gobuffalo/buffalo-test
 ```
 
 ## Usage
