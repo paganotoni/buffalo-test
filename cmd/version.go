@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/paganotoni/buffalo-tester/tester"
+	"github.com/paganotoni/buffalo-test/test"
 	"github.com/spf13/cobra"
 )
 
@@ -12,7 +12,7 @@ var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "current version of test",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		fmt.Println("tester", tester.Version)
+		fmt.Println("tester", test.Version)
 		return nil
 	},
 }
