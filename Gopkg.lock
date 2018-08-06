@@ -58,6 +58,17 @@
   revision = "8639ed8d4d3ac7853a1dffc958bf88b2672ac251"
 
 [[projects]]
+  branch = "master"
+  digest = "1:12ec69643157092ebc4cb44ea9b6d1711dec20e88c7cb83e7168d61ff070d896"
+  name = "github.com/gobuffalo/buffalo-test"
+  packages = [
+    "cmd",
+    "test",
+  ]
+  pruneopts = "UT"
+  revision = "79e27d572783ee48cb8ccf8d096757fe54d18e3f"
+
+[[projects]]
   digest = "1:3b38d215aa4fb6c4d10f44bed053cea84eacf901042e43b8fdfb68b33276b791"
   name = "github.com/gobuffalo/envy"
   packages = ["."]
@@ -442,6 +453,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/gobuffalo/buffalo-plugins/plugins",
+    "github.com/gobuffalo/buffalo-test/cmd",
     "github.com/gobuffalo/buffalo/meta",
     "github.com/gobuffalo/envy",
     "github.com/gobuffalo/pop",

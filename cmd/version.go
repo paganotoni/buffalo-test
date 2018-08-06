@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/gobuffalo/buffalo-test/test"
+	"github.com/paganotoni/buffalo-test/test"
 	"github.com/spf13/cobra"
 )
 
