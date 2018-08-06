@@ -23,6 +23,8 @@ type Runner struct {
 
 func NewRunner(args []string) Runner {
 	args = removeFlag("--force-migrations", args)
+	args = removeFlag("--skip-db-setup", args)
+
 	return Runner{
 		args: args,
 	}

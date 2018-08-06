@@ -31,6 +31,11 @@ func NewSetup(args []string) (Setup, error) {
 
 func (s Setup) Run() error {
 	logrus.Info("Setting up database")
+	if s.skipDBSetup() {
+		s.args = removeFlag("--skip-db-setup", s.args)
+		return nil
+	}
+
 	s.resetDatabase()
 
 	if s.forceMigrations() {
@@ -53,6 +58,10 @@ func (s Setup) Run() error {
 	}
 
 	return nil
+}
+
+func (s Setup) skipDBSetup() bool {
+	return strings.Contains(strings.Join(s.args, ""), "--skip-db-setup")
 }
 
 func (s Setup) forceMigrations() bool {
