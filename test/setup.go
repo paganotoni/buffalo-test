@@ -61,7 +61,6 @@ func (s Setup) Run() error {
 }
 
 func (s Setup) skipDBSetup() bool {
-	logrus.Info(strings.Join(s.args, ""))
 	return strings.Contains(strings.Join(s.args, ""), "--skip-db-setup")
 }
 
