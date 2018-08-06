@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/gobuffalo/buffalo-test/cmd"
+	"github.com/paganotoni/buffalo-test/cmd"
 )
 
 func main() {

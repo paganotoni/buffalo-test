@@ -55,7 +55,7 @@
   name = "github.com/gobuffalo/buffalo-plugins"
   packages = ["plugins"]
   pruneopts = "UT"
-  revision = "8639ed8d4d3ac7853a1dffc958bf88b2672ac251"
+  revision = "74213b1cee9fe85a93eb171a792986e220076f9d"
 
 [[projects]]
   branch = "master"
@@ -77,15 +77,23 @@
   version = "v1.6.3"
 
 [[projects]]
-  digest = "1:5791b3ffee8974f3b3de681a4fa0204e21219ca7d83760af9aec1b8245ecd820"
+  digest = "1:0374f3ecab889f8b247d0d9c2dbfb6d28a52b9ecdf0d1635756d0eda4a270c14"
   name = "github.com/gobuffalo/fizz"
   packages = [
     ".",
     "translators",
   ]
   pruneopts = "UT"
-  revision = "a68affc47dc7145d791149e996c379a0f46ee507"
-  version = "v1.0.2"
+  revision = "a210f7878542ac427c2d50e183f53feb38dea1f7"
+  version = "v1.0.6"
+
+[[projects]]
+  digest = "1:d5d0824f029cecbe33537700f267085e3eb0ffc20305cbabc4daa6be107f015c"
+  name = "github.com/gobuffalo/github_flavored_markdown"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "6af65dcbf5386db0b8da50e160ff0fdda7ef1459"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:ee42a56fbd096701a7ed8c87c2a19b40a7773d5ec000b32c0736fd49305693c9"
@@ -104,7 +112,7 @@
   version = "v1.12.1"
 
 [[projects]]
-  digest = "1:b3807dd9e678441cd0a107054f8c3e4bb8983bed292ec195b1614b69d43a8d49"
+  digest = "1:2c4b02abea3a403e9d169176f9944668d11175e72f77a531cf7fd99bd7bd5fbe"
   name = "github.com/gobuffalo/plush"
   packages = [
     ".",
@@ -114,11 +122,11 @@
     "token",
   ]
   pruneopts = "UT"
-  revision = "726a3d7f08d2665e95e495175ddb68da00868572"
-  version = "v3.7.9"
+  revision = "8d37e0b25872764b4ff35a11eaaf1e8074251121"
+  version = "v3.7.11"
 
 [[projects]]
-  digest = "1:7f1ad0fdb98751f6d3b84ce51910bc7b95a15419beee295fdc841c834c601ee2"
+  digest = "1:8ee967c0ff0295bc6b031ce197d6f9cdd9f239291cb0b9ebd147d8f32e902812"
   name = "github.com/gobuffalo/pop"
   packages = [
     ".",
@@ -128,8 +136,8 @@
     "nulls",
   ]
   pruneopts = "UT"
-  revision = "c0faa0f7edf8c0db4befe9abc41d135003a97d53"
-  version = "v4.6.2"
+  revision = "f7f4e882bd509b48db850bdff8dde6f86c82404d"
+  version = "v4.6.3"
 
 [[projects]]
   digest = "1:20f46367dc905818a64aec83b44ede9f10b829211ed92b770a8c3b0db96b8ce8"
@@ -144,12 +152,12 @@
   version = "v2.0.7"
 
 [[projects]]
-  digest = "1:29570df175901e8227fa99abc3491a5ab74915da456c7defd0dc111ef3cc5e76"
+  digest = "1:df80a8b65c7016a9091000c2271ef4fe02f046688efed112eba938eebc44786e"
   name = "github.com/gobuffalo/uuid"
   packages = ["."]
   pruneopts = "UT"
-  revision = "3a9fb6c5c481d4886f1e9323c61ad743fb955860"
-  version = "v2.0.0"
+  revision = "788767dde529e4b1c0e078569ebe51dc6b2ad6dc"
+  version = "v2.0.1"
 
 [[projects]]
   digest = "1:b080741393dc2e2180b2230baa993644cf536121e770bc45b4b59b93bfb99cc5"
@@ -262,14 +270,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:372bf733bdf9afd5f1ba86b1bf92ece60848336c518af4497bf29763424ed8e0"
-  name = "github.com/russross/blackfriday"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "11635eb403ff09dbc3a6b5a007ab5ab09151c229"
-
-[[projects]]
-  branch = "master"
   digest = "1:efa124a0ca36a35cc1a1b472cb0fa2be1e7d9fd1db0f8bc9a042e42e4c6405aa"
   name = "github.com/serenize/snaker"
   packages = ["."]
@@ -283,14 +283,6 @@
   pruneopts = "UT"
   revision = "1744e2970ca51c86172c8190fadad617561ed6e7"
   version = "v1.0.0"
-
-[[projects]]
-  branch = "master"
-  digest = "1:6d6af6ab76763d93bf0ea3cf6647c6069aa1b2804553b2a1107fb1851e78860c"
-  name = "github.com/shurcooL/github_flavored_markdown"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "8913699a52e3aa02aa96387098e0004bb84aacf0"
 
 [[projects]]
   branch = "master"
@@ -399,7 +391,7 @@
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
   pruneopts = "UT"
-  revision = "c126467f60eb25f8f27e5a981f32a87e3965053f"
+  revision = "80fca2ff14a3fb7db622c9a5462f8ce9ea026cba"
 
 [[projects]]
   branch = "master"
@@ -411,7 +403,7 @@
     "html/atom",
   ]
   pruneopts = "UT"
-  revision = "49c15d80dfbc983ea25246ee959d970efe09ec09"
+  revision = "f4c29de78a2a91c00474a2e689954305c350adf9"
 
 [[projects]]
   branch = "master"
@@ -423,14 +415,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:8742e6e73627b2877c3f723bc1823d5667ec59011242480309dc90fa862512aa"
+  digest = "1:1f2a1717924c1d867098dc9e6c2970e425df30aae2eb89849614993825e0720a"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "bd9dbc187b6e1dacfdd2722a87e83093c2d7bd6e"
+  revision = "2be389f392cd91df245b41638f818a1c041f0c08"
 
 [[projects]]
   digest = "1:c25289f43ac4a68d88b02245742347c94f1e108c534dda442188015ff80669b3"
@@ -439,6 +431,14 @@
   pruneopts = "UT"
   revision = "b1f26356af11148e710935ed1ac8a7f5702c7612"
   version = "v1.1.0"
+
+[[projects]]
+  digest = "1:8bc629776d035c003c7814d4369521afe67fdb8efc4b5f66540d29343b98cf23"
+  name = "gopkg.in/russross/blackfriday.v1"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "55d61fa8aa702f59229e6cff85793c22e580eaf5"
+  version = "v1.5.1"
 
 [[projects]]
   digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"

@@ -26,8 +26,28 @@
 
 
 [[constraint]]
+  name = "github.com/gobuffalo/buffalo"
+  version = "0.12.4"
+
+[[constraint]]
   branch = "master"
   name = "github.com/gobuffalo/buffalo-plugins"
+
+[[constraint]]
+  name = "github.com/gobuffalo/envy"
+  version = "1.6.3"
+
+[[constraint]]
+  name = "github.com/gobuffalo/pop"
+  version = "4.6.3"
+
+[[constraint]]
+  name = "github.com/pkg/errors"
+  version = "0.8.0"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.0.6"
 
 [[constraint]]
   name = "github.com/spf13/cobra"
